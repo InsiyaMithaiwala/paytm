@@ -1,4 +1,6 @@
+require('dotenv').config();
 const mongoose = require("mongoose");
+
 
 // mongoose.connect("mongodb+srv://admin:MmTlCHfY5q5v1aMi@cluster0.wxvzi.mongodb.net/paytm", {
 //   useNewUrlParser: true,
@@ -7,7 +9,7 @@ const mongoose = require("mongoose");
 // .then(() => console.log("Database connected successfully"))
 // .catch((error) => console.error("Database connection error:", error));
 
-mongoose.connect("mongodb+srv://admin:MmTlCHfY5q5v1aMi@cluster0.wxvzi.mongodb.net/paytm")
+mongoose.connect(process.env.MONGODB_URL)
   .then(() => console.log("Database connected successfully"))
   .catch((error) => console.error("Database connection error:", error));
 
